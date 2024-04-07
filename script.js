@@ -28,6 +28,19 @@ const restaurant = {
   },
 };
 
+// for of
+const menus = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menus);
+
+for (const menu of menus) {
+  console.log(menu);
+}
+
+for (const [i, item] of menus.entries()) {
+  console.log(i, item);
+}
+
+console.log([...menus.entries()]);
 // looping obj
 // property name
 const properties = Object.keys(restaurant.openingHours);
@@ -79,6 +92,26 @@ BONUS: Create an object called 'scorers' which contains the names of the players
 
 GOOD
 */
+
+// SETS
+const orderSet = new Set(['pasta', 'momo', 'rice', 'pasta', 'momo']);
+console.log(orderSet);
+console.log(orderSet.size);
+console.log(orderSet.has('momo'));
+orderSet.add('garlic');
+orderSet.delete('pasta');
+// orderSet.clear();
+
+for (const item of orderSet) {
+  console.log(item);
+}
+
+// usage
+const staff = ['waiter', 'manager', 'chef', 'manager', 'chef'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(orderSet);
+console.log(new Set('jonas '));
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -261,3 +294,30 @@ console.log(maskCreditCard(2234353436));
 // repeat
 const message1 = 'bad weather.. all departure delayed';
 console.log(message1.repeat(2));
+
+// c4
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+const text = document.querySelector('textarea').value;
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  console.log(rows);
+
+  for (const [i, row] of rows.entries()) {
+    // cat_dog= catDog
+    const textLower = row.toLowerCase().trim();
+    const underscoreIndex = textLower.indexOf('_');
+
+    const print =
+      textLower.slice(0, underscoreIndex) +
+      textLower.slice(underscoreIndex + 1)[0].toUpperCase() +
+      textLower.slice(underscoreIndex + 2);
+
+    // console.log(print);
+    const textp = `${print} ${'✅'.repeat(i + 1)}`;
+    console.log(textp);
+  }
+});
