@@ -297,27 +297,62 @@ console.log(message1.repeat(2));
 
 // c4
 
-document.body.append(document.createElement('textarea'));
-document.body.append(document.createElement('button'));
-const text = document.querySelector('textarea').value;
+// document.body.append(document.createElement('textarea'));
+// document.body.append(document.createElement('button'));
+// const text = document.querySelector('textarea').value;
 
-document.querySelector('button').addEventListener('click', function () {
-  const text = document.querySelector('textarea').value;
-  const rows = text.split('\n');
-  console.log(rows);
+// document.querySelector('button').addEventListener('click', function () {
+//   const text = document.querySelector('textarea').value;
+//   const rows = text.split('\n');
+//   console.log(rows);
 
-  for (const [i, row] of rows.entries()) {
-    // cat_dog= catDog
-    const textLower = row.toLowerCase().trim();
-    const underscoreIndex = textLower.indexOf('_');
+//   for (const [i, row] of rows.entries()) {
+//     // cat_dog= catDog
+//     const textLower = row.toLowerCase().trim();
+//     const underscoreIndex = textLower.indexOf('_');
 
-    const print =
-      textLower.slice(0, underscoreIndex) +
-      textLower.slice(underscoreIndex + 1)[0].toUpperCase() +
-      textLower.slice(underscoreIndex + 2);
+//     const print =
+//       textLower.slice(0, underscoreIndex) +
+//       textLower.slice(underscoreIndex + 1)[0].toUpperCase() +
+//       textLower.slice(underscoreIndex + 2);
 
-    // console.log(print);
-    const textp = `${print} ${'✅'.repeat(i + 1)}`;
-    console.log(textp);
-  }
-});
+//     // console.log(print);
+//     const textp = `${print} ${'✅'.repeat(i + 1)}`;
+//     console.log(textp);
+//   }
+// });
+
+// map
+const res = new Map();
+res.set('name', 'fire ice');
+res.set(1, 'firanz, italy');
+console.log(res.set(2, 'milan, italy'));
+
+res
+  .set('category', ['italino', 'pizzeria', 'vegi'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'we are open')
+  .set(false, 'we are closed');
+
+// to get data
+
+console.log(res.get('name'));
+console.log(res.get(true));
+
+const time = 21;
+console.log(time > res.get('open') && time < res.get('close'));
+
+console.log(res.has('name'));
+console.log(res.delete('name'));
+console.log(res.size);
+// console.log(res.clear());
+
+// res.set([1, 2], 'test');
+// console.log(res.get[(1, 2)]); // does nt work
+
+const arr = [1, 2];
+res.set(arr, 'test');
+console.log(res.get(arr)); // does nt work
+
+console.log(res);
