@@ -356,3 +356,42 @@ res.set(arr, 'test');
 console.log(res.get(arr)); // does nt work
 
 console.log(res);
+
+const question = new Map([
+  ['question', 'wht is the best programming langg in worl'],
+  [1, 'C'],
+  [2, 'JAVA'],
+  [3, 'JS'],
+  ['correct', 3],
+  [true, 'when user is correct'],
+  [false, 'when user is incorrect'],
+]);
+console.log(Object.entries(restaurant.openingHours));
+console.log(question);
+
+// convert obj to map
+const hourMap = new Map(Object.entries(restaurant.openingHours));
+console.log(hourMap);
+
+// iterantion
+
+// quiz
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') {
+    console.log(`ans ${key} : ${value}`);
+  }
+}
+
+// const ans = Number(prompt('your ans'));
+// console.log(ans);
+// if (question.get('correct') === ans) {
+//   console.log(question.get(true));
+// } else {
+//   console.log(question.get(false));
+// }
+
+// console.log(question.get(question.get('correct') === ans));
+
+// map to array
+console.log([...question]);
